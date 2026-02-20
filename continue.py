@@ -32,6 +32,7 @@ if st.button("Mostrar Dados"):
         plt.plot(df["meses"], df[loja], marker="o")
         plt.xlabel("Meses")
         plt.ylabel("Vendas mensais (R$)")
+        plt.grid(True)
         st.pyplot(plt)
 
     else:
@@ -39,7 +40,7 @@ if st.button("Mostrar Dados"):
 
         df["Total Mensal"] = df["Loja 1"] + df["Loja 2"] + df["Loja 3"]
 
-        st.subheader("Total de todas as lojas")
+        st.subheader("Dados de todas as lojas")
         st.dataframe(df[["meses", "Total Mensal"]])
 
         total_geral = df["Total Mensal"].sum()
@@ -50,5 +51,6 @@ if st.button("Mostrar Dados"):
         plt.figure()
         plt.plot(df["meses"], df["Total Mensal"], marker="o")
         plt.xlabel("Meses")
-        plt.ylabel("Vendas totais (R$)")
+        plt.ylabel("Vendas totais mensais (R$)")
+        plt.grid(True)
         st.pyplot(plt)
