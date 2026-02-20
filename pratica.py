@@ -26,7 +26,7 @@ impostos = {
 df["imposto_pago"] = df["categoria"].map(impostos)
 
 
-df["lucro_total"] = df["total_venda"] - (df["total_venda"]*df["taxa_pagamento"]) - (df["total_venda"]*df["imposto_pago"])
+df["lucro_total"] = (df["total_venda"] - (df["total_venda"]*df["taxa_pagamento"]) - (df["total_venda"]*df["imposto_pago"])).round(2)
 
 # st.write(df["categoria"].unique())
 # st.write(df["forma_pagamento"].unique())
